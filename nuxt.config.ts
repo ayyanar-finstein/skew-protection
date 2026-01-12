@@ -3,12 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['nuxt-skew-protection', '@nuxtjs/robots'],
-  // runtimeConfig: {
-  //   seoProKey: 'nsp_d9f8926354a942b9970896b48e49f736'
-  // },
+  runtimeConfig: {
+    seoProKey: 'nsp_a2ac0faebc054b7f926a5bea87fedd1f'
+  },
   skewProtection: {
     // Disable persistent storage
-    bundlePreviousDeploymentChunks: true,
+    bundlePreviousDeploymentChunks: false,
     enabled: true
   }
 })

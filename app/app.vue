@@ -1,9 +1,39 @@
+<script setup lang="ts">
+  const skew = useSkewProtection({ lazy: true })
+  const { isOutdated } = useSkewProtection();
+  const { clientVersion } = useSkewProtection();
+  const { manifest } = useSkewProtection();
+  const { isConnected } = useSkewProtection()
+  const { checkForUpdates } = useSkewProtection()
+  const { onAppOutdated } = useSkewProtection()
+
+  onMounted(() => {
+    skew.connect();
+    console.log('Skew Protection isOutdated:', isOutdated.value);
+    console.log('Skew Protection clientVersion:', clientVersion);
+    console.log('Skew Protection manifest:', manifest);
+    console.log('Skew Protection isConnected:', isConnected.value);
+    console.log('checkForUpdates', checkForUpdates());
+    onAppOutdated((manifest) => {
+  console.log('New version available:', manifest?.id)
+  // Show passive "Update available" badge
+})
+    
+  });
+</script>
+
 <template>
   <div>
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
   </div>
-  <SkewNotification v-slot="{ isCurrentChunksOutdated, dismiss, reload }" force-open>
+  <div>
+    Second Changed
+  </div>
+  <div>
+    Four Changed
+  </div>
+  <SkewNotification v-slot="{ isCurrentChunksOutdated, dismiss, reload }">
     <Transition
       enter-active-class="transition duration-300 ease-out"
       enter-from-class="opacity-0 translate-y-2"
