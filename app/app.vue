@@ -28,10 +28,10 @@
     <NuxtWelcome />
   </div>
   <div>
-    Second Changed
+    Four Changed
   </div>
   <div>
-    Four Changed
+    Fivth Cahnge Applied
   </div>
   <SkewNotification v-slot="{ isCurrentChunksOutdated, dismiss, reload }">
     <Transition
