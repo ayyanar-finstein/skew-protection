@@ -27,9 +27,7 @@
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
   </div>
-  <div>
-    Four Changed
-  </div>
+  <h>Sixth changed applied</h>
   <div>
     Fivth Cahnge Applied
   </div>
